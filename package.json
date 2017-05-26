@@ -1,0 +1,19 @@
+{
+  "name": "spa-news-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilarne/SPA-news-app.git"
+  },
+  "author": "Will, Sulaiman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilarne/SPA-news-app/issues"
+  },
+  "homepage": "https://github.com/ilarne/SPA-news-app#readme"
+}
