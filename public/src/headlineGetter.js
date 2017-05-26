@@ -1,5 +1,6 @@
 var request = new XMLHttpRequest();
-var headlines
+var div = document.getElementById('headlines');
+
 request.open('GET', 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search', true);
 
 request.onload = function() {
@@ -7,23 +8,11 @@ request.onload = function() {
     var data = JSON.parse(request.responseText);
   } else {
   }
-  headlinePrinter();
+  var stories = JSON.parse(request.response).response.results;
+  headlinePrinter(stories, div);
 };
 
 request.onerror = function() {
 };
 
 request.send();
-
-  function headlinePrinter() {
-    headlines = JSON.parse(request.response).response.results;
-    var headlineDiv = document.getElementById('headlines');
-
-  headlineDiv.innerHTML = '';
-
-  for (var i = 0; i < headlines.length; i++) {
-    var headline = headlines[i].webTitle;
-
-    headlineDiv.innerHTML += '<a href="#' + i + '" class="list-group-item list-group-item-action flex-column align-items-start"><h4> ' + headline + '</h4></a>';
-  }
-};

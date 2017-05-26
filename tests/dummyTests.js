@@ -1,21 +1,32 @@
-describe("test1", function() {
+describe("headlinePrinter", function() {
 
-  it("'String' contain with a 'tr'", function() {
-    expect("string").toContain("tr")
-  });
-
-  it("array contain element", function() {
-    expect([1,2,3]).toContain(2)
-  });
-
-});
-
-describe("test2", function() {
-  it("2+2 equal 4", function() {
-    expect(2+2).isEqualTo(4)
-  });
-
-  it("fails false is not true", function() {
-    expect(false).isTrue()
+  it("iterates through an array and appends to a string", function(){
+  headlines = [ { webTitle: 'london' }, { webTitle: 'Paris'}];
+  headlineDiv = { innerHTML: "" };
+  headlinePrinter(headlines, headlineDiv);
+  expect(headlineDiv.innerHTML).toContain("london");
   });
 });
+
+
+// describe("test1", function() {
+//
+//   it("'String' contain with a 'tr'", function() {
+//     expect("string").toContain("tr")
+//   });
+//
+//   it("array contain element", function() {
+//     expect([1,2,3]).toContain(2)
+//   });
+//
+// });
+//
+// describe("test2", function() {
+//   it("2+2 equal 4", function() {
+//     expect(2+2).isEqualTo(4)
+//   });
+//
+//   it("fails false is not true", function() {
+//     expect(false).isTrue()
+//   });
+// });
